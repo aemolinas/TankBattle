@@ -20,10 +20,11 @@ public class TankBattle extends JFrame {
     //private variable to controll the sound track
     private AudioClip soundTrack;
  
-    public TankBattle(){
-        
+    public TankBattle(){             
+                Tank tank1 = new Tank();
+                Tank tank2 = new Tank();
         	//create and add the panel that holds the game
-		TankBattlePanel gamePanel = new TankBattlePanel();
+		TankBattlePanel gamePanel = new TankBattlePanel(tank1,tank2);
 		add(gamePanel);
 		
 		//create the thread that controls the animation of the game
@@ -57,6 +58,7 @@ public class TankBattle extends JFrame {
         frame.setSize(820,645);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
     }
 }
